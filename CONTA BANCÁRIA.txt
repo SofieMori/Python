@@ -1,0 +1,78 @@
+class Conta:
+    def __init__(self, numero, saldo=0):
+        self.numero = numero
+        self.saldo = saldo
+        self.bloqueada = False
+
+    def verificar_bloqueio(self):
+        if self.bloqueada:
+            print("Conta bloqueada. Entre em contato com o banco.")
+            return True
+        return False
+
+    def ver_extrato(self):
+        if self.verificar_bloqueio():
+            return
+        print(f"Extrato da conta {self.numero}: R$ {self.saldo:.2f}")
+
+    def fazer_deposito(self, valor):
+        if self.verificar_bloqueio():
+            return
+        if valor <= 0:
+            print("Valor do depósito deve ser positivo.")
+            return
+        self.saldo += valor
+        print(f"Depósito de R$ {valor:.2f} realizado com sucesso.")
+
+    def fazer_saque(self, valor):
+        if self.verificar_bloqueio():
+            return
+        if valor <= 0:
+            print("Valor do saque deve ser positivo.")
+            return
+        if valor > self.saldo:
+            print("Saldo insuficiente.")
+            return
+        self.saldo -= valor
+        print(f"Saque de R$ {valor:.2f} realizado com sucesso.")
+
+def main():
+    conta = Conta(numero="12345")
+    tentativas = 0
+    senha_correta = "senha123"
+
+    while tentativas < 3:
+        senha = input("Digite sua senha para acessar a conta: ")
+        if senha == senha_correta:
+            while True:
+                print("\n--- MENU ---")
+                print("1. Ver extrato")
+                print("2. Fazer um depósito")
+                print("3. Fazer um saque")
+                print("4. Sair do sistema")
+                opcao = input("Escolha uma opção: ")
+
+                if opcao == "1":
+                    conta.ver_extrato()
+                elif opcao == "2":
+                    valor = float(input("Digite o valor do depósito: "))
+                    conta.fazer_deposito(valor)
+                elif opcao == "3":
+                    valor = float(input("Digite o valor do saque: "))
+                    conta.fazer_saque(valor)
+                elif opcao == "4":
+                    print("Saindo do sistema.")
+                    return
+                else:
+                    print("Opção inválida.")
+        else:
+            tentativas += 1
+            print(f"Senha incorreta. Você tem {3 - tentativas} tentativas restantes.")
+
+    conta.bloqueada = True
+    print("Conta bloqueada devido a múltiplas tentativas falhas.")
+
+if __name__ == "__main__":
+    main() 
+
+n = input('Clique para sair')
