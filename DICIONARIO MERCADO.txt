@@ -1,0 +1,32 @@
+produtos= {
+
+'guitarra':20,
+'contrabaixo':30,
+'bateria':40,
+'flauta':50,
+
+}
+
+lista1 = []
+lista2 = []
+for n, x in produtos.items():
+    lista1.append(n)
+    lista2.append(x)
+print(lista1,lista2)
+
+           
+compra = []
+escolha = str(input('Digite o seu produto:'))
+compra.append (produtos[escolha])
+print('produto',compra)
+
+valores = []
+pagamento = ['pix','debito','credito']
+print('pix',
+      'debito',
+      'credito')
+escolha2 = int(input('Digite a forma de pagamento:'))
+valores.append(pagamento[escolha2]) 
+print(valores)
+
+print('OBrigado, volte sempre')
