@@ -1,0 +1,58 @@
+# # print('Par ou ímpar?')
+
+
+# # n = int(input('Digite um número de 1 a 10>>'))
+# # match n:
+# #     case 1: 
+# #         print('É impar.')
+# #     case 2: 
+# #         print('É par.')
+# #     case 3: 
+# #         print('É impar.')
+# #     case 4: 
+# #         print('É par.')
+# #     case 5: 
+# #         print('É ímpar.')
+# #     case 6:
+# #         print('É par.')
+# #     case 7:
+# #         print('É ímpar.')
+# #     case 8: 
+# #         print('É par.')
+# #     case 9: 
+# #         print('É ímpar.')
+# #     case 10: 
+# #         print('É par.')
+# #     case 0: 
+# #         print('Não reconhecido')
+
+# n = input('Algo')
+# match n: 
+#     case n if n: 
+#         print('Preenchido')
+#     case _: 
+#         print('Vazio')
+
+# print('É MAIOR, MENOR OU IGUAL QUE 10?')
+# n = int(input('Digite um número>>'))
+# match n:
+#     case n if n > 10: 
+#         print('É Maior')
+#     case n if n == 10:
+#         print('É igual')
+#     case n if n < 10: 
+#         print('É menor')
+
+# print('FAIXA ETÁRIA')
+# n = int(input('Digite sua idade:'))
+# match n: 
+#     case n if n < 10:
+#         print('Você é uma criança.')
+#     case n if n > 10:
+#         print('Você é um jovem.')
+#     case n if n > 20:
+#         print('Você é adulto.')
+#     case n if n > 50:
+#         print('Você é idoso.')
+    
+    
