@@ -1,0 +1,28 @@
+import tkinter as tk 
+
+
+def mostrarTxto():
+    tes = 'Mostrou'
+    
+
+
+janela = tk.Tk()
+
+janela.geometry('700x700')
+janela.title('Interface Gráfica')
+# widgets
+titulo = tk.Label(janela, text ='This is not a drill.')
+# titulo.pack()
+titulo.grid(row=1,column=2)
+
+titulo2 = tk.Label(janela, text = 'Dont')
+titulo.pack
+
+btn = tk.Button(janela, text= 'Clique aqui')
+btn.grid()
+
+
+
+janela.mainloop()
+
+
