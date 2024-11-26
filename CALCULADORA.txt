@@ -1,0 +1,81 @@
+CALCULADORA
+
+
+
+import tkinter as tk
+
+
+
+
+def soma():
+    n1  = float(input1.get())
+    n2  = float(input2.get())
+    soma =  n1 + n2 
+    Result.config(text = f'Resultado: {soma}')
+
+def sub():
+    n1  = float(input1.get())
+    n2  = float(input2.get())
+    soma =  n1 - n2 
+    Result.config(text = f'Resultado: {sub}')
+    
+def mult():
+    n1  = float(input1.get())
+    n2  = float(input2.get())
+    soma =  n1 * n2 
+    Result.config(text = f'Resultado: {mult}')
+    
+def div():
+    n1  = float(input1.get())
+    n2  = float(input2.get())
+    soma =  n1 / n2 
+    Result.config(text = f'Resultado: {div}')
+    
+janela  =  tk.Tk()
+janela.title('Calculadora')
+janela.geometry('150x300')
+
+
+# label 
+texto = tk.Label(janela, text= 'CALCULADORA')
+texto.grid(row=1, column = 2)
+
+
+# input
+input1 =  tk.Entry(janela)
+input1.grid(row = 2, column = 2, padx= 15)
+
+
+
+# input
+input2 =  tk.Entry(janela)
+input2.grid(row = 3, column = 2, padx= 15)
+
+
+
+# label -- texto
+Result = tk.Label(janela, text= 'Resultado = ')
+Result.grid(row=4, column = 2, padx = 30, pady=20)
+
+
+
+#botão 
+
+
+btn = tk.Button(janela, text =  '+', command = soma )
+btn.grid(row = 6, column=2, pady=20 )
+
+btn = tk.Button(janela, text =  '-', command = sub )
+btn.grid(row = 7, column=2, pady=20 )
+
+btn = tk.Button(janela, text =  '*', command = mult )
+btn.grid(row = 8, column=2, pady=20 )
+
+btn = tk.Button(janela, text =  '/', command = div )
+btn.grid(row = 9, column=2, pady=20 )
+
+
+btn = tk.Button(janela, text =  'clique aqui', command = soma )
+btn.grid(row = 6, column=2, pady=20 )
+
+janela.mainloop()
